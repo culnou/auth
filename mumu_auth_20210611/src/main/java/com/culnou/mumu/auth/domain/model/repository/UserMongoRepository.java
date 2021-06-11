@@ -9,11 +9,7 @@ import com.culnou.mumu.auth.infrastructure.persistence.UserRepository;
 public class UserMongoRepository implements UserRepository {
 
 	
-	@Override
-	public void saveUser(User user) throws Exception {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 	@Override
 	public User findUserById(UserId userId) throws Exception {
@@ -25,6 +21,18 @@ public class UserMongoRepository implements UserRepository {
 	public List<User> findAllUsers() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public UserId createUserId(User user) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void saveUser(User user) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
