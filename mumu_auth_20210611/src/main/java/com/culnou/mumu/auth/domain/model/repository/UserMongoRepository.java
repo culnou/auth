@@ -8,12 +8,7 @@ import com.culnou.mumu.auth.infrastructure.persistence.UserRepository;
 
 public class UserMongoRepository implements UserRepository {
 
-	@Override
-	public UserId nextIdentity() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public void saveUser(User user) throws Exception {
 		// TODO Auto-generated method stub

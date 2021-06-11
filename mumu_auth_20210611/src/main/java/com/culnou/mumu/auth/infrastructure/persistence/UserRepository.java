@@ -7,7 +7,6 @@ import com.culnou.mumu.auth.domain.model.entity.UserId;
 
 public interface UserRepository {
 	
-	public UserId nextIdentity() throws Exception;
 	
 	public void saveUser(User user) throws Exception;
 	
