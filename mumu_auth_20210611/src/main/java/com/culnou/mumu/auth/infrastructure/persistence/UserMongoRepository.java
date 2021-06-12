@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.culnou.mumu.auth.domain.model.entity.User;
 import com.culnou.mumu.auth.domain.model.entity.UserId;
 import com.culnou.mumu.auth.domain.model.repository.UserRepository;
-@Service
+@Service("userMongoRepository")
 @Transactional
 public class UserMongoRepository implements UserRepository {
 
