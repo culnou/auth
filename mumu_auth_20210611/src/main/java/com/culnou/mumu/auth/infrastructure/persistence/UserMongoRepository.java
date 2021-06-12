@@ -13,7 +13,7 @@ import com.culnou.mumu.auth.domain.model.entity.UserId;
 import com.culnou.mumu.auth.domain.model.repository.UserRepository;
 @Service
 @Transactional
-public class UserJpaMongoRepositoryImpl implements UserRepository {
+public class UserMongoRepository implements UserRepository {
 
 	@Autowired
 	private UserJpaMongoRepository userRepository;

@@ -14,19 +14,18 @@ public class UserIdTest {
 		
 	}
 	//値オブジェクトの不変性のテスト。
-	/*
 	@Test
 	public void testInvariant() {
 		//自身とクローンの等価性検証。
 		UserId id = new UserId("11111");
-		UserId copy = new UserId(id);
-		assertEquals(id, copy);
+		UserId clone = id.clone();
+		assertEquals(id, clone);
 		//副作用のないメソッドの実行
-		System.out.println(id.getUserId());
+		System.out.println(id.getId());
 		//メソッドを実行することによって自身の状態が変化していないか検証。
-		assertEquals(id, copy);
+		assertEquals(id, clone);
 	}
-	*/
+	
 	//値オブジェクトの等価性のテスト。
 	@Test
 	public void testEquality() {

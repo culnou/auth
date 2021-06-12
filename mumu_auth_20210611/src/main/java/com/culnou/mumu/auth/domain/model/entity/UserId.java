@@ -2,11 +2,11 @@ package com.culnou.mumu.auth.domain.model.entity;
 
 import java.io.Serializable;
 
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.Data;
+
+
 //値オブジェクトの実装①：finalでserializableなクラスにする。
-public final class UserId implements Serializable{
+public final class UserId implements Serializable, Cloneable{
 
 	/**
 	 * 
@@ -23,13 +23,7 @@ public final class UserId implements Serializable{
 		this.setId(id);
 	}
 	
-	//値オブジェクトの実装③：コピーコンストラクター
-	//単体テストで使用する。
-	/*
-	public UserId(UserId userId) {
-		this(userId.userId);
-	}
-	*/
+	
 	
 	private void setId(String userId) {
 		if(userId == null) {
@@ -42,7 +36,21 @@ public final class UserId implements Serializable{
 	public String getId() {
 		return this.id;
 	}
+	
+	//値オブジェクトの実装③：クローンの生成
+	//単体テストで使用する。
+	@Override
+	public UserId clone() {
+		try {
+			super.clone();
+		}catch(CloneNotSupportedException e) {
+			throw new InternalError();
+		}
+		return new UserId(this.getId());
+	}
+		
 	//値オブジェクトの実装④：値の等価性を実現する。
+	@Override
 	public boolean equals(Object object) {
 		boolean equality = false;
 		if(object != null && this.getClass() == object.getClass()) {
@@ -55,5 +63,6 @@ public final class UserId implements Serializable{
 		}
 		return equality;
 	}
+	
 
 }
