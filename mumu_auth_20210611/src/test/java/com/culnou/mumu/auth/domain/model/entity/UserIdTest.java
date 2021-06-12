@@ -13,9 +13,21 @@ public class UserIdTest {
 		UserId userId = new UserId(id);
 		
 	}
-	
-	
-	//値オブジェクトの等価性のテスト。2021/6/11
+	//値オブジェクトの不変性のテスト。
+	/*
+	@Test
+	public void testInvariant() {
+		//自身とクローンの等価性検証。
+		UserId id = new UserId("11111");
+		UserId copy = new UserId(id);
+		assertEquals(id, copy);
+		//副作用のないメソッドの実行
+		System.out.println(id.getUserId());
+		//メソッドを実行することによって自身の状態が変化していないか検証。
+		assertEquals(id, copy);
+	}
+	*/
+	//値オブジェクトの等価性のテスト。
 	@Test
 	public void testEquality() {
 		UserId id1 = new UserId("11111");
@@ -23,7 +35,7 @@ public class UserIdTest {
 		assertEquals(id1, id2);
 	}
 	
-	//値オブジェクトの交換可能性のテスト。2021/6/11
+	//値オブジェクトの交換可能性のテスト。
 	@Test
 	public void testExchangeability() {
 		UserId id1 = new UserId("11111");

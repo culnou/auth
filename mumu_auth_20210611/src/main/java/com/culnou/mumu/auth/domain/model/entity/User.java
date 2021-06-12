@@ -15,6 +15,7 @@ public class User {
 	private String fullName = "";
 	private String email = "";
 	private String authState = "";
+	private UserId userId;
 	
 	public User(
 			    String id, 
@@ -27,6 +28,7 @@ public class User {
 			    String authState
 			) {
 		this.setId(id);
+		this.setUserId(id);
 		this.setName(name);
 		this.setDescription(description);
 		this.setSignIn(signIn);
@@ -41,6 +43,13 @@ public class User {
 			throw new IllegalArgumentException("The id may not be set to null.");
 		}
 		this.id = id;
+	}
+	
+	private void setUserId(String id) {
+		if(id == null) {
+			throw new IllegalArgumentException("The id may not be set to null.");
+		}
+		this.userId = new UserId(id);
 	}
 	
 	public void setName(String name) {
