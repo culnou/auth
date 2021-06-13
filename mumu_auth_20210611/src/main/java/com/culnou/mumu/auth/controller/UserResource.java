@@ -10,8 +10,6 @@ import lombok.Data;
 public class UserResource implements Dto{
 	
 	private String id;
-	private String name;
-	private String description;
 	private boolean signIn = false;
 	private String provider;
 	private String fullName = "";
@@ -20,8 +18,6 @@ public class UserResource implements Dto{
 	
 	public UserResource(
 			String id,
-			String name,
-			String description,
 			boolean signIn,
 			String provider,
 			String fullName,
@@ -29,8 +25,6 @@ public class UserResource implements Dto{
 			String autState
 			) {
 		this.setId(id);
-		this.setName(name);
-		this.setDescription(description);
 		this.setSignIn(signIn);
 		this.setProvider(provider);
 		this.setFullName(fullName);
@@ -48,19 +42,7 @@ public class UserResource implements Dto{
 	
 	
 	
-	public void setName(String name) {
-		if(name == null) {
-			throw new IllegalArgumentException("The name may not be set to null.");
-		}
-		this.name = name;
-	}
 	
-	public void setDescription(String description) {
-		if(description == null) {
-			throw new IllegalArgumentException("The description may not be set to null.");
-		}
-		this.description = description;
-	}
 	
 	public void setSignIn(boolean signIn) {
 		this.signIn = signIn;

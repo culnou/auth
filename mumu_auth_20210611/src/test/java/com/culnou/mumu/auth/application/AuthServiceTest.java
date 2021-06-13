@@ -31,7 +31,7 @@ public class AuthServiceTest {
 	
 	@Test
 	public void testSignIn() throws Exception{
-		UserResource userResource = new UserResource("11111", "sagawa", "This is sagawa.", true, "Apple", "satoshi sagawa", "sagawa@ss.com", "normal");
+		UserResource userResource = new UserResource("11111", true, "Apple", "satoshi sagawa", "sagawa@ss.com", "normal");
 		authService.signIn(userResource);
 		UserId id = new UserId(userResource.getId());
 		UserResource readUser = authService.findUserById(id);

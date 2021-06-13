@@ -6,7 +6,7 @@ import com.culnou.mumu.auth.domain.model.UserId;
 
 public interface AuthService {
 	
-	public UserId signIn(Dto user) throws Exception;
+	public UserResource signIn(Dto user) throws Exception;
 	
 	public UserResource findUserById(UserId id) throws Exception;
 	

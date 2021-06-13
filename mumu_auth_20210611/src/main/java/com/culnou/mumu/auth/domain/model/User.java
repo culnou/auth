@@ -8,8 +8,6 @@ import lombok.Data;
 public class User {
 	
 	private String id;
-	private String name;
-	private String description;
 	private boolean signIn = false;
 	private String provider;
 	private String fullName = "";
@@ -19,8 +17,6 @@ public class User {
 	
 	public User(
 			    String id, 
-			    String name,
-			    String description,
 			    boolean signIn,
 			    String provider,
 			    String fullName,
@@ -29,8 +25,6 @@ public class User {
 			) {
 		this.setId(id);
 		this.setUserId(id);
-		this.setName(name);
-		this.setDescription(description);
 		this.setSignIn(signIn);
 		this.setProvider(provider);
 		this.setFullName(fullName);
@@ -52,19 +46,7 @@ public class User {
 		this.userId = new UserId(id);
 	}
 	
-	protected void setName(String name) {
-		if(name == null) {
-			throw new IllegalArgumentException("The name may not be set to null.");
-		}
-		this.name = name;
-	}
 	
-	protected void setDescription(String description) {
-		if(description == null) {
-			throw new IllegalArgumentException("The description may not be set to null.");
-		}
-		this.description = description;
-	}
 	
 	protected void setSignIn(boolean signIn) {
 		this.signIn = signIn;

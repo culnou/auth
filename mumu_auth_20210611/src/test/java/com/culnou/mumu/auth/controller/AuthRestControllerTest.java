@@ -53,8 +53,6 @@ public class AuthRestControllerTest {
 	public void testSignIn() throws Exception{
 		JSONObject user = new JSONObject();
 		user.put("id", "11111");
-		user.put("name", "sagawa");
-		user.put("description", "This is sagawa.");
 		user.put("signIn", true);
 		user.put("provider", "Apple");
 		user.put("fullName", "satoshi sagawa");
