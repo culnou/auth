@@ -1,4 +1,4 @@
-package com.culnou.mumu.auth.domain.model.entity;
+package com.culnou.mumu.auth.domain.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -38,7 +38,7 @@ public class User {
 		this.setAuthState(authState);
 	}
 	
-	public void setId(String id) {
+	protected void setId(String id) {
 		if(id == null) {
 			throw new IllegalArgumentException("The id may not be set to null.");
 		}
@@ -52,32 +52,32 @@ public class User {
 		this.userId = new UserId(id);
 	}
 	
-	public void setName(String name) {
+	protected void setName(String name) {
 		if(name == null) {
 			throw new IllegalArgumentException("The name may not be set to null.");
 		}
 		this.name = name;
 	}
 	
-	public void setDescription(String description) {
+	protected void setDescription(String description) {
 		if(description == null) {
 			throw new IllegalArgumentException("The description may not be set to null.");
 		}
 		this.description = description;
 	}
 	
-	public void setSignIn(boolean signIn) {
+	protected void setSignIn(boolean signIn) {
 		this.signIn = signIn;
 	}
 	
-	public void setProvider(String provider) {
+	protected void setProvider(String provider) {
 		if(provider == null) {
 			throw new IllegalArgumentException("The provider may not be set to null.");
 		}
 		this.provider = provider;
 	}
 	
-	public void setFullName(String fullName) {
+	protected void setFullName(String fullName) {
 		if(fullName == null) {
 			throw new IllegalArgumentException("The fullName may not be set to null.");
 		}
@@ -85,14 +85,14 @@ public class User {
 	}
 	
 	
-	public void setEmail(String email) {
+	protected void setEmail(String email) {
 		if(email == null) {
 			throw new IllegalArgumentException("The email may not be set to null.");
 		}
 		this.email = email;
 	}
 	
-	public void setAuthState(String authState) {
+	protected void setAuthState(String authState) {
 		if(authState == null) {
 			throw new IllegalArgumentException("The authState may not be set to null.");
 		}

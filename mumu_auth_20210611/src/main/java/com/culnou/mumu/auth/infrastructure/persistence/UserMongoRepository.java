@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.culnou.mumu.auth.domain.model.entity.User;
-import com.culnou.mumu.auth.domain.model.entity.UserId;
-import com.culnou.mumu.auth.domain.model.repository.UserRepository;
+import com.culnou.mumu.auth.domain.model.User;
+import com.culnou.mumu.auth.domain.model.UserId;
+import com.culnou.mumu.auth.domain.model.UserRepository;
 @Service("userMongoRepository")
 @Transactional
 public class UserMongoRepository implements UserRepository {

@@ -1,4 +1,4 @@
-package com.culnou.mumu.auth.domain.model.entity;
+package com.culnou.mumu.auth.domain.model;
 
 import java.io.Serializable;
 

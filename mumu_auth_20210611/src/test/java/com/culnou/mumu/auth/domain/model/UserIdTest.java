@@ -1,7 +1,9 @@
-package com.culnou.mumu.auth.domain.model.entity;
+package com.culnou.mumu.auth.domain.model;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import com.culnou.mumu.auth.domain.model.UserId;
 
 public class UserIdTest {
 	

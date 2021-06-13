@@ -1,10 +1,7 @@
-package com.culnou.mumu.auth.domain.model.repository;
+package com.culnou.mumu.auth.domain.model;
 
-import java.util.Collection;
+
 import java.util.List;
-
-import com.culnou.mumu.auth.domain.model.entity.User;
-import com.culnou.mumu.auth.domain.model.entity.UserId;
 
 public interface UserRepository {
 	
