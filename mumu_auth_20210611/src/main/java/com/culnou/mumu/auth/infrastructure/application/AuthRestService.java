@@ -20,13 +20,12 @@ public class AuthRestService implements AuthService {
 	private UserRepository userRepository;
 
 	@Override
-	public void signIn(Dto dto) throws Exception {
+	public UserId signIn(Dto dto) throws Exception {
 		// TODO Auto-generated method stub
 		UserResource userResource = (UserResource)dto;
 		User user = new User(userResource.getId(), userResource.getName(), userResource.getDescription(), userResource.isSignIn(), userResource.getProvider(), userResource.getFullName(), userResource.getEmail(), userResource.getAuthState());
 		userRepository.saveUser(user);
-		
-
+		return new UserId(userResource.getId());
 	}
 
 	@Override

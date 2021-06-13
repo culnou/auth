@@ -16,6 +16,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -51,7 +52,7 @@ public class AuthRestControllerTest {
 	@Test
 	public void testSignIn() throws Exception{
 		JSONObject user = new JSONObject();
-		user.put("id", "44444");
+		user.put("id", "11111");
 		user.put("name", "sagawa");
 		user.put("description", "This is sagawa.");
 		user.put("signIn", true);
@@ -65,13 +66,15 @@ public class AuthRestControllerTest {
 		HttpEntity<String> request = 
 			      new HttpEntity<String>(user.toString(), httpHeaders);
 		
-		template.postForObject(url, request, String.class);
-		
 		//値が帰る場合の方法
-		//String personResultAsJsonStr = 
-		//		template.postForObject(url, request, String.class);
-		//JsonNode root = objectMapper.readTree(personResultAsJsonStr);
+		String personResultAsJsonStr = 
+				template.postForObject(url, request, String.class);
+		JsonNode root = objectMapper.readTree(personResultAsJsonStr);
 		
+		assertNotNull(personResultAsJsonStr);
+	    assertNotNull(root);
+	    assertNotNull(root.path("id").asText());
+	    assertEquals("11111", root.path("id").asText());
 	}
 	
 	

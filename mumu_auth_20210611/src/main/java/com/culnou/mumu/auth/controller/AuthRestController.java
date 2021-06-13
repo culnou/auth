@@ -3,6 +3,7 @@ package com.culnou.mumu.auth.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.culnou.mumu.auth.application.AuthService;
+import com.culnou.mumu.auth.domain.model.UserId;
 
 @RestController
 public class AuthRestController {
@@ -19,8 +21,8 @@ public class AuthRestController {
 	private AuthService authService;
 	
 	@PostMapping("/users")
-	public void signIn(@RequestBody UserResource user) throws Exception{
-		this.authService.signIn(user);
+	public ResponseEntity<UserId> signIn(@RequestBody UserResource user) throws Exception{
+		return ResponseEntity.ok().body(this.authService.signIn(user));
 		
 	}
 	
