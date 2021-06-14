@@ -8,12 +8,14 @@ import com.culnou.mumu.auth.domain.model.UserId;
 
 public class UserTest {
 
+	//識別子オブジェクトが正しく設定される
 	@Test
 	public void testGetUserId() {
 		User user = new User("11111", true, "Apple", "satoshi sagawa", "sagawa@ss.com", "normal");
 		UserId userId = user.getUserId();
 		assertEquals("11111", userId.getId());
 	}
+	//NULLを防いで正しく初期化できる
 	@Test(expected = IllegalArgumentException.class)
 	public void testSetId() {
 		User user = new User(null, true, "Apple", "satoshi sagawa", "sagawa@ss.com", "normal");

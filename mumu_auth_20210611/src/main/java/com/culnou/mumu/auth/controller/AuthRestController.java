@@ -22,8 +22,8 @@ public class AuthRestController {
 	
 	@PostMapping("/users")
 	public ResponseEntity<UserResource> signIn(@RequestBody UserResource user) throws Exception{
-		return ResponseEntity.ok().body(this.authService.signIn(user));
 		
+		return ResponseEntity.ok().body(this.authService.signIn(user));
 	}
 	
 	@DeleteMapping("/users")

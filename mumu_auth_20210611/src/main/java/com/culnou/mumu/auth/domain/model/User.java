@@ -23,13 +23,15 @@ public class User {
 			    String email,
 			    String authState
 			) {
+		//自己カプセル化
 		this.setId(id);
-		this.setUserId(id);
 		this.setSignIn(signIn);
 		this.setProvider(provider);
 		this.setFullName(fullName);
 		this.setEmail(email);
 		this.setAuthState(authState);
+		//識別子オブジェクトの作成
+		this.setUserId(id);
 	}
 	
 	protected void setId(String id) {

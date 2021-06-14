@@ -14,8 +14,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.culnou.mumu.auth.domain.model.User;
-import com.culnou.mumu.auth.domain.model.UserRepository;
+
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
