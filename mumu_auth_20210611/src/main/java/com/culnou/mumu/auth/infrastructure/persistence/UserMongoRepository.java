@@ -44,6 +44,7 @@ public class UserMongoRepository implements UserRepository {
 	@Override
 	public void saveUser(User user) throws Exception {
 		// TODO Auto-generated method stub
+		System.out.println("********** 20210901 test **********");
 		userRepository.save(user);
 		
 	}

@@ -55,6 +55,8 @@ public class AuthRestControllerTest {
 		user.put("id", "11111");
 		user.put("signIn", true);
 		user.put("provider", "Apple");
+		user.put("firstName", "satoshi");
+		user.put("lastName", "sagawa");
 		user.put("fullName", "satoshi sagawa");
 		user.put("email", "sagawa_satoshi@culnou.com");
 		user.put("authState", "normal");

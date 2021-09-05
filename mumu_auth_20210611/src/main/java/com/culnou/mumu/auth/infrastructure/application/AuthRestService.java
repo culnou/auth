@@ -23,7 +23,7 @@ public class AuthRestService implements AuthService {
 	public UserResource signIn(Dto dto) throws Exception {
 		// TODO Auto-generated method stub
 		UserResource userResource = (UserResource)dto;
-		User user = new User(userResource.getId(), userResource.isSignIn(), userResource.getProvider(), userResource.getFullName(), userResource.getEmail(), userResource.getAuthState());
+		User user = new User(userResource.getId(), userResource.isSignIn(), userResource.getProvider(), userResource.getFirstName(), userResource.getLastName(), userResource.getFullName(), userResource.getEmail(), userResource.getAuthState());
 		userRepository.saveUser(user);
 		return userResource;
 	}
@@ -32,7 +32,7 @@ public class AuthRestService implements AuthService {
 	public UserResource findUserById(UserId id) throws Exception {
 		// TODO Auto-generated method stub
 		User user = userRepository.findUserById(id);
-		UserResource userResource = new UserResource(user.getId(), user.isSignIn(), user.getProvider(), user.getFullName(), user.getEmail(), user.getAuthState());
+		UserResource userResource = new UserResource(user.getId(), user.isSignIn(), user.getProvider(), user.getFirstName(), user.getLastName(), user.getFullName(), user.getEmail(), user.getAuthState());
 		return userResource;
 	}
 

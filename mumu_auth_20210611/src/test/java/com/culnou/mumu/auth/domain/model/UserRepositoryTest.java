@@ -34,7 +34,7 @@ public class UserRepositoryTest {
 
 	@Test
 	public void testSaveAndFindOneUser() throws Exception{
-		User user = new User("11111", true, "Apple", "satoshi sagawa", "sagawa@ss.com", "normal");
+		User user = new User("11111", true, "Apple", "satoshi", "sagawa", "satoshi sagawa", "sagawa@ss.com", "normal");
 		this.userRepository.saveUser(user);
 		User readUser = this.userRepository.findUserById(user.getUserId());
 		assertNotNull(readUser);
